@@ -1,0 +1,88 @@
+## BACKGROUND GENERATOR
+## background.html
+
+<!DOCTYPE html>
+<html># code-alpha-web-development-task2
+
+<head>
+  <title>Background Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Background Generator</h1>
+  <div class="container">
+    <div class="color-picker">
+      <label for="color1">Color 1:</label>
+      <input type="color" id="color1">
+    </div>
+    <div class="color-picker">
+     <label for="color2">color2:</label>
+     <input type="color" id="color2">
+    </div>
+    <div class="color-picker">
+      <label for="color3">Color 3:</label>
+      <input type="color" id="color1">
+    </div>
+    <button id="gradientBtn">Generate Gradient</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+###style.css
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-light maroon(to right, #ff0000, #00ff00);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.color-picker {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 20px 30px;
+  font-size: 18px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+
+###script.js
+
+const color1 = document.getElementById("color1");
+const color2 = document.getElementById("color2");
+const color3 = document.getElementById("color3");
+const gradientBtn = document.getElementById("gradientBtn");
+const body = document.querySelector("body");
+
+gradientBtn.addEventListener("click", generateGradient);
+
+function generateGradient() {
+  body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value},${color3.value}`;
+}
