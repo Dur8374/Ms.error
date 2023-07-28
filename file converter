@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>File Converter</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>File Converter</h1>
+        <form id="converter-form">
+            <input type="file" id="file-input" accept=".csv,.txt,.xlsx" required>
+            <label for="file-input">Select File</label>
+
+            <select id="output-format" required>
+                <option value="" disabled selected>Select Output Format</option>
+                <option value="csv">CSV</option>
+                <option value="txt">Plain Text</option>
+                <option value="xlsx">Excel</option>
+            </select>
+
+            <button type="submit">Convert</button>
+        </form>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
